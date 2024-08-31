@@ -1,0 +1,208 @@
+.custom-container{
+    background-color: #725436;
+}
+
+/* Adding img to nav*/
+.custom-navbar {
+    user-select: none;
+    /*background-image: url('assets/imgs/banner-1.webp');*/
+    border-radius: 0 0 2% 2%; /* Apply border radius to bottom corners only */
+    background-size: cover; /* Adjust the background size */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    height: 100%; /* Adjust the height as needed */
+    /* Optionally, you can adjust the padding or margin to fit your layout */
+
+}
+/* Ensure consistent cursor behavior for dropdown toggle */
+.navbar-nav .nav-item.dropdown .nav-link.dropdown-toggle {
+    cursor: pointer; /* Explicitly set the cursor to pointer for better UX */
+    color: #4F321A; /* Ensure color consistency */
+}
+
+/* Style for the dropdown toggle when the menu is open */
+.navbar-nav .nav-item.dropdown .nav-link.dropdown-toggle::after {
+    color: #97693c; /* Change the text color of the dropdown toggle */
+    background-color: rgba(0, 0, 0, 0.1); /* Optional: Change background color when dropdown is open */
+    
+}
+
+/* Add a pseudo-element after the nav-link on hover */
+.navbar-nav .nav-item .nav-link:hover::after {
+    color: #97693c;
+    content: ""; /* Necessary to make pseudo-element appear */
+    display: block;
+    position: absolute; /* Or use relative if needed */
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px; /* Adjust the height if needed */
+    background-color: #6C4621; /* Color of the bottom border or effect */
+}
+
+/* Add a pseudo-element before the nav-link on hover */
+.navbar-nav .nav-item .nav-link:hover::before {
+    content: ""; /* Necessary to make pseudo-element appear */
+    display: block;
+    position: absolute; /* Or use relative if needed */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px; /* Adjust the height of the underline */
+    background-color: #725436; /* Color of the underline */
+    border-radius: 0 0 4px 4px; /* Optional: Rounded corners for the underline */
+}
+
+
+/* Style for the dropdown toggle on hover or focus */
+.navbar-nav .nav-item.dropdown .nav-link.dropdown-toggle:focus, 
+.navbar-nav .nav-item.dropdown .nav-link.dropdown-toggle:hover {
+    color: #925d29; /* Ensure the color matches your theme */
+    background-color: transparent; /* Optional: Change background color on hover or focus */
+}
+
+.nav-link, .dropdown-item {
+    color: #4F321A;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Style for the dropdown menu */
+.custom-dropdown-menu {
+    background-color: #97693c !important; /* Set the background color of the dropdown menu */
+    border: 1px solid #0A0606 !important; /* Add a border around the dropdown menu */
+    border-radius: 0.25rem; /* Optional: Adjust the border radius for rounded corners */
+    box-shadow: 0 0.125rem 0.25rem rgba(187, 34, 34, 0.075); /* Optional: Add a shadow for better visibility */
+}
+
+/* Style for dropdown items */
+.custom-dropdown-menu .dropdown-item {
+    color: #4F321A; /* Set the text color of dropdown items */
+}
+
+.custom-dropdown-menu .dropdown-item:hover {
+    background-color: #0A0606; /* Change background color on hover */
+    color: #925d29; /* Change text color on hover */
+}
+
+/* Style for the dropdown divider */
+.custom-dropdown-divider {
+    border-top: 2px solid #0A0606 !important; /* Adjust the color and thickness of the divider */
+}
+
+/* Style for nav items on hover */
+.navbar-nav .nav-item .nav-link:hover {
+    color: #925d29; /* Change text color on hover */
+    background-color: rgba(0, 0, 0, 0.1); /* Optional: Change background color on hover */
+}
+
+/* Ensure nav links have relative positioning if using absolute positioning in pseudo-elements */
+.navbar-nav .nav-item .nav-link {
+    position: relative;
+    color: #4F321A; /* Default text color */
+}
+
+
+/* SEARCH AREA >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+/* Custom styling for the search form */
+.custom-search-form {
+    margin: 0; /* Adjust margin if needed */
+}
+
+/* Custom styling for the search input field */
+.custom-search-input {
+    width: 300px;
+    height: 46px;
+    border-radius: 0.25rem; /* Adjust the border radius */
+    border: 1px solid #4F321A; /* Customize border color */
+    padding: 0.5rem 1rem; /* Adjust padding */
+    background-color: #f8f9fa; /* Change background color */
+    color: #4F321A; /* Change text color */
+}
+
+/* Change search input placeholder color */
+.custom-search-input::placeholder {
+    color: #6C4621; /* Placeholder text color */
+}
+
+/* Custom styling for the search button */
+.custom-search-button {
+    border-radius: 0.25rem; /* Adjust the border radius */
+    background-color: #4F321A; /* Button background color */
+    color: #ffffff; /* Button text color */
+    border: 1px solid #4F321A; /* Button border color */
+}
+
+/* Change button hover and focus states */
+.custom-search-button:hover,
+.custom-search-button:focus {
+    background-color: #6C4621; /* Darker background color on hover/focus */
+    color: #ffffff; /* Text color on hover/focus */
+    border-color: #6C4621; /* Border color on hover/focus */
+}
+
+/* Remove default focus outline */
+.custom-search-input:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: none; /* Remove default box-shadow */
+}
+
+/* Optionally, add your own custom focus styling */
+.custom-search-input:focus {
+    border-color: #6C4621; /* Custom border color */
+    box-shadow: 0 0 0 0.2rem rgba(108, 70, 33, 0.25); /* Custom box-shadow for focus effect */
+}
+
+/* search button >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+.button-50 {
+    appearance: button;
+    background-color: #6C4621;
+    background-image: none;
+    border: 1px solid #6C4621;
+    border-radius: 4px;
+    box-shadow: #fff 4px 4px 0 0,#6C4621 4px 4px 0 1px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    margin: 0 5px 10px 0;
+    overflow: visible;
+    padding: 8px 16px;
+    text-align: center;
+    text-transform: none;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.button-50:focus,
+.button-50:hover {
+    text-decoration: none;
+    background-color: #5a3b1f; /* Slightly darker shade for hover/focus */
+}
+
+.button-50:active {
+    box-shadow: #0A0606 0 3px 5px inset;
+    outline: 0;
+}
+
+.button-50:not([disabled]):active {
+    box-shadow: #fff 2px 2px 0 0, #6C4621 2px 2px 0 1px;
+    transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+    .button-50 {
+        padding: 10px 20px; /* Adjust padding for larger screens */
+    }
+}
+
+
+
+

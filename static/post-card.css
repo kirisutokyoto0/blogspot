@@ -1,0 +1,36 @@
+.custom-card {
+    background-color: #92683f; /* Light background color */
+    border: 2px solid #6C4621; /* Border color */
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    margin-bottom: 20px;
+}
+
+.custom-card .card-header {
+    background-color: #97693c; /* Dark header background */
+    color: #070504; /* Light text color */
+}
+
+.author{
+    font-style: oblique;
+    font-size: 13px;
+}
+
+.custom-card .card-body {
+    background-color: #e7cfae; /* White body background */
+    color: #070504; /* Dark text color */
+}
+
+.custom-card .card-footer {
+    background-color: #d6b587; /* Light footer background */
+    color: #070504; /* Footer text color */
+}
+
+.custom-card .btn-primary {
+    background-color: #91623c; /* Custom button background */
+    border: none; /* Remove default border */
+}
+
+.custom-card .btn-primary:hover {
+    background-color: #4F321A; /* Darker button on hover */
+}

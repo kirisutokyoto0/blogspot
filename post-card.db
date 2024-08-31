@@ -1,0 +1,12 @@
+CREATE TABLE posts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    author VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    summary TEXT NOT NULL,
+    url VARCHAR(255) NOT NULL,
+    date_posted DATE NOT NULL
+);
+
+INSERT INTO posts (author, title, summary, url, date_posted) VALUES
+('John Doe', 'First Post', 'This is a summary of the first post.', 'https://example.com/1', '2024-08-29'),
+('Jane Smith', 'Second Post', 'This is a summary of the second post.', 'https://example.com/2', '2024-08-30');
