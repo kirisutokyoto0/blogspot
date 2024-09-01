@@ -1,42 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.querySelector('.custom-search-input');
-    const suggestionBox = document.getElementById('suggestion-box');
-    const cards = document.querySelectorAll('.custom-card');
+  const searchInput = document.querySelector('.custom-search-input');
+  const cards = document.querySelectorAll('.custom-card');
 
-    // Create an array of titles
-    const titles = Array.from(cards).map(card => card.getAttribute('data-title'));
+  searchInput.addEventListener('input', function () {
+    const searchValue = this.value.toLowerCase().trim();
+    filterCards(searchValue);
+  });
 
-    // Show suggestions as user types
-    searchInput.addEventListener('input', () => {
-        const query = searchInput.value.toLowerCase();
-        suggestionBox.innerHTML = '';
-        if (query) {
-            const suggestions = titles.filter(title => title.toLowerCase().includes(query));
-            suggestions.forEach(suggestion => {
-                const suggestionItem = document.createElement('a');
-                suggestionItem.href = '#';
-                suggestionItem.classList.add('list-group-item', 'list-group-item-action');
-                suggestionItem.textContent = suggestion;
-                suggestionItem.addEventListener('click', () => {
-                    searchInput.value = suggestion;
-                    suggestionBox.innerHTML = '';
-                    filterCards(query);
-                });
-                suggestionBox.appendChild(suggestionItem);
-            });
-        }
+  document.querySelector('.button-50').addEventListener('click', function () {
+    filterCards(searchInput.value.toLowerCase().trim());
+  });
+
+  function filterCards(searchValue) {
+    cards.forEach(card => {
+      const title = card.querySelector('.card-title').textContent.toLowerCase();
+      const author = card.querySelector('.author').textContent.toLowerCase();
+      
+      if (title.includes(searchValue) || author.includes(searchValue)) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
     });
+  }
+});
 
-    // Filter cards based on search input
-    const filterCards = (query) => {
-        cards.forEach(card => {
-            const title = card.getAttribute('data-title').toLowerCase();
-            const author = card.getAttribute('data-author').toLowerCase();
-            if (title.includes(query) || author.includes(query)) {
-                card.style.display = 'block';  // Show the card
-            } else {
-                card.style.display = 'none';  // Hide the card
-            }
-        });
-    };
+
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.querySelector('.custom-search-input');
+  const aboutSection = document.querySelector('.about');
+
+  // Function to check and toggle visibility
+  function toggleAboutVisibility() {
+    if (searchInput.value.trim() !== '') {
+      aboutSection.style.display = 'none'; // Hide the About section
+    } else {
+      aboutSection.style.display = 'block'; // Show the About section
+    }
+  }
+
+  // Add event listeners to the search input
+  searchInput.addEventListener('input', toggleAboutVisibility);
+  
+  // Initially check the visibility when the page loads
+  toggleAboutVisibility();
 });
